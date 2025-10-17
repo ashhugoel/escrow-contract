@@ -15,7 +15,7 @@ pub mod escrow {
         reciever: Pubkey,
     ) -> Result<()> {
         // Derive PDA vault authority to save bump
-        let (vault_authority, bump) = Pubkey::find_program_address(
+        let (_vault_authority, bump) = Pubkey::find_program_address(
             &[b"vault", ctx.accounts.escrow_account.key().as_ref()],
             ctx.program_id,
         );
