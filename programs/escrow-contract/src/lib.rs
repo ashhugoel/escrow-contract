@@ -14,13 +14,13 @@ pub mod escrow {
         amount: u64,
         reciever: Pubkey,
     ) -> Result<()> {
-        // 1️⃣ Derive PDA vault authority
+        // Derive PDA vault authority to save bump
         let (vault_authority, bump) = Pubkey::find_program_address(
             &[b"vault", ctx.accounts.escrow_account.key().as_ref()],
             ctx.program_id,
         );
 
-        // 2️⃣ Move tokens from initializer → vault
+        // Move tokens from initializer → vault
         let cpi_ctx = CpiContext::new(
             ctx.accounts.token_program.to_account_info(),
             Transfer {
