@@ -33,7 +33,7 @@ describe("escrow-contract", () => {
 
   it("Intialize escrow ", async () => {
     mint = await createMint(connection, payer, payer.publicKey, null, 6);
-
+    
     const amount = new anchor.BN(10000);
     const initializerTokenAccount = await getOrCreateAssociatedTokenAccount(
       connection,
