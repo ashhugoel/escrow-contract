@@ -59,7 +59,7 @@ pub mod escrow {
             },
             signer,
         );
-
+ 
         let _ = transfer(cpi_ctx, ctx.accounts.escrow_account.amount);
 
         Ok(())
